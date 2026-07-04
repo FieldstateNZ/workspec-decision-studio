@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://schemas.fieldstate.io/workspec/v1alpha1/decision.schema.json
+# yaml-language-server: $schema=https://schema.workspec.io/v1alpha1/decision.schema.json
 apiVersion: workspec.fieldstate.io/v1alpha1
 kind: Decision
 metadata:

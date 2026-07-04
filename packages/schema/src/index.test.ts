@@ -26,7 +26,7 @@ describe('@workspec/decision-schema constants', () => {
   });
 
   it('derives the published $schema URLs from the base URL', () => {
-    expect(SCHEMA_BASE_URL).toBe('https://schemas.fieldstate.io/workspec/v1alpha1/');
+    expect(SCHEMA_BASE_URL).toBe('https://schema.workspec.io/v1alpha1/');
     expect(DECISION_SCHEMA_URL).toBe(`${SCHEMA_BASE_URL}decision.schema.json`);
     expect(CATALOG_SCHEMA_URL).toBe(`${SCHEMA_BASE_URL}catalog.schema.json`);
   });

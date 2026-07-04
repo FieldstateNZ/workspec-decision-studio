@@ -39,19 +39,19 @@ Every artifact SHOULD begin with a `yaml-language-server` directive so editors b
 published JSON Schema for completion and hover docs:
 
 ```yaml
-# yaml-language-server: $schema=https://schemas.fieldstate.io/workspec/v1alpha1/decision.schema.json
+# yaml-language-server: $schema=https://schema.workspec.io/v1alpha1/decision.schema.json
 ```
 
 ```yaml
-# yaml-language-server: $schema=https://schemas.fieldstate.io/workspec/v1alpha1/catalog.schema.json
+# yaml-language-server: $schema=https://schema.workspec.io/v1alpha1/catalog.schema.json
 ```
 
 The tooling writes this header automatically. The base URL
-`https://schemas.fieldstate.io/workspec/v1alpha1/` is the **canonical** location. It is
-DNS-gated — it resolves once the Fieldstate org points a CNAME for `schemas.fieldstate.io` at
+`https://schema.workspec.io/v1alpha1/` is the **canonical** location. It is
+DNS-gated — it resolves once the Fieldstate org points a CNAME for `schema.workspec.io` at
 GitHub Pages. The schemas are published by [`.github/workflows/pages.yml`](../.github/workflows/pages.yml);
-until the DNS is in place, the **interim** Pages URL resolves the same `/workspec/v1alpha1/` tail:
-`https://fieldstatenz.github.io/workspec-decision-studio/workspec/v1alpha1/decision.schema.json`,
+until the DNS is in place, the **interim** Pages URL resolves the same `/v1alpha1/` tail:
+`https://fieldstatenz.github.io/workspec-decision-studio/v1alpha1/decision.schema.json`,
 or point `$schema` at the committed `json-schema/*.schema.json` files directly. The canonical URL
 stays the value written into fixtures so it becomes correct the moment DNS lands.
 

@@ -4,14 +4,14 @@ name: Publish JSON Schemas (GitHub Pages)
 # artifact resolves to a real URL for editor IntelliSense.
 #
 # Canonical URL (org-DNS gated):
-#   https://schemas.fieldstate.io/workspec/v1alpha1/decision.schema.json
-# The CNAME below claims `schemas.fieldstate.io`; it only resolves once the org
+#   https://schema.workspec.io/v1alpha1/decision.schema.json
+# The CNAME below claims `schema.workspec.io`; it only resolves once the org
 # points a DNS CNAME for that host at `fieldstatenz.github.io`. Until then the
 # interim Pages URL resolves:
-#   https://fieldstatenz.github.io/workspec-decision-studio/workspec/v1alpha1/decision.schema.json
+#   https://fieldstatenz.github.io/workspec-decision-studio/v1alpha1/decision.schema.json
 #
-# The schemas are laid out under `workspec/v1alpha1/` so BOTH the canonical host
-# and the interim project-pages path expose the same `/workspec/v1alpha1/...` tail.
+# The schemas are laid out under `v1alpha1/` so BOTH the canonical host and the
+# interim project-pages path expose the same `/v1alpha1/...` tail.
 
 on:
   push:
@@ -40,19 +40,19 @@ jobs:
       - name: Assemble the schema site
         run: |
           set -euo pipefail
-          mkdir -p _site/workspec/v1alpha1
-          cp json-schema/decision.schema.json _site/workspec/v1alpha1/
-          cp json-schema/catalog.schema.json  _site/workspec/v1alpha1/
+          mkdir -p _site/v1alpha1
+          cp json-schema/decision.schema.json _site/v1alpha1/
+          cp json-schema/catalog.schema.json  _site/v1alpha1/
           # Custom domain claim — resolves once the org adds the DNS CNAME.
-          echo 'schemas.fieldstate.io' > _site/CNAME
+          echo 'schema.workspec.io' > _site/CNAME
           # A tiny index so the site root is not a 404.
           cat > _site/index.html <<'HTML'
           <!doctype html><meta charset="utf-8">
           <title>WorkSpec schemas</title>
           <h1>WorkSpec Decision Studio — JSON Schemas</h1>
           <ul>
-            <li><a href="/workspec/v1alpha1/decision.schema.json">workspec/v1alpha1/decision.schema.json</a></li>
-            <li><a href="/workspec/v1alpha1/catalog.schema.json">workspec/v1alpha1/catalog.schema.json</a></li>
+            <li><a href="/v1alpha1/decision.schema.json">v1alpha1/decision.schema.json</a></li>
+            <li><a href="/v1alpha1/catalog.schema.json">v1alpha1/catalog.schema.json</a></li>
           </ul>
           HTML
 

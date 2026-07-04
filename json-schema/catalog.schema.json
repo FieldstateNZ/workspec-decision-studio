@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.fieldstate.io/workspec/v1alpha1/catalog.schema.json",
+  "$id": "https://schema.workspec.io/v1alpha1/catalog.schema.json",
   "title": "WorkSpec Catalog (v1alpha1)",
   "type": "object",
   "properties": {
