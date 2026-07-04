@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-mf/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# render-adr output is a generated artifact, never committed
+*.adr.md

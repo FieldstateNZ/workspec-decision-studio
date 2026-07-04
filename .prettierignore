@@ -1,0 +1,12 @@
+**/dist/**
+**/dist-mf/**
+**/node_modules/**
+**/coverage/**
+**/test-results/**
+**/playwright-report/**
+pnpm-lock.yaml
+json-schema/**
+
+# Invalid-by-design fixtures: tests assert exact line/col of errors, so these
+# must not be reformatted (some are intentionally malformed YAML).
+**/test/fixtures/invalid/**
