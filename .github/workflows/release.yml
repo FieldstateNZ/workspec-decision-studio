@@ -42,10 +42,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       # Trusted publishing (OIDC) requires npm >= 11.5.1; Node 20 ships npm 10.
-      # Pin to the 11.x line so a future npm major can't silently drop Node 20
-      # and so releases stay reproducible.
+      # Pin to an exact 11.x version for reproducible releases (bump deliberately);
+      # staying < 12 also avoids a future npm major that could drop Node 20.
       - name: Upgrade npm for trusted publishing
-        run: npm install -g 'npm@^11.5.1'
+        run: npm install -g npm@11.5.1
 
       - name: Install
         run: pnpm install --frozen-lockfile
@@ -70,11 +70,17 @@ jobs:
       - name: Publish (pnpm pack → npm publish, OIDC)
         run: |
           set -euo pipefail
+          shopt -s nullglob
           out="$(mktemp -d)"
           for pkg in schema engine ui studio; do
             pnpm --filter "@workspec/decision-$pkg" pack --pack-destination "$out"
           done
-          for tgz in "$out"/*.tgz; do
+          tarballs=("$out"/*.tgz)
+          if [ "${#tarballs[@]}" -eq 0 ]; then
+            echo "error: pnpm pack produced no tarballs in $out" >&2
+            exit 1
+          fi
+          for tgz in "${tarballs[@]}"; do
             echo "publishing $tgz"
             npm publish "$tgz" --access public
           done
