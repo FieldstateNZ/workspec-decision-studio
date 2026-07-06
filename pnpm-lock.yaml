@@ -36,6 +36,61 @@ importers:
         specifier: ^3.2.4
         version: 3.2.6(@types/node@22.20.0)(jsdom@25.0.1)(tsx@4.23.0)(yaml@2.9.0)
 
+  apps/site:
+    dependencies:
+      '@tanstack/react-query':
+        specifier: ^5.62.7
+        version: 5.101.2(react@18.3.1)
+      '@workspec/decision-engine':
+        specifier: 0.1.0-alpha.0
+        version: 0.1.0-alpha.0
+      '@workspec/decision-schema':
+        specifier: 0.1.0-alpha.0
+        version: 0.1.0-alpha.0
+      '@workspec/decision-ui':
+        specifier: 0.1.0-alpha.0
+        version: 0.1.0-alpha.0(@tanstack/react-query@5.101.2(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@testing-library/dom':
+        specifier: ^10.4.0
+        version: 10.4.1
+      '@testing-library/jest-dom':
+        specifier: ^6.6.3
+        version: 6.9.1
+      '@testing-library/react':
+        specifier: ^16.1.0
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@testing-library/user-event':
+        specifier: ^14.5.2
+        version: 14.6.1(@testing-library/dom@10.4.1)
+      '@types/react':
+        specifier: ^18.3.18
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: ^18.3.5
+        version: 18.3.7(@types/react@18.3.31)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.4
+        version: 4.7.0(vite@7.3.6(@types/node@22.20.0)(tsx@4.23.0)(yaml@2.9.0))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^7.0.0
+        version: 7.3.6(@types/node@22.20.0)(tsx@4.23.0)(yaml@2.9.0)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.6(@types/node@22.20.0)(jsdom@25.0.1)(tsx@4.23.0)(yaml@2.9.0)
+
   examples/hosting-platform: {}
 
   examples/mf-host:
@@ -1176,6 +1231,19 @@ packages:
 
   '@vitest/utils@3.2.6':
     resolution: {integrity: sha512-lI23nIs4bnT3T8NIoh+vFaz5s2/DdP0Jgt2jxwgWljvwn82cLJtyi/If+fjFyoLMGIOz0U/fKvWE0d4jsNQEfg==}
+
+  '@workspec/decision-engine@0.1.0-alpha.0':
+    resolution: {integrity: sha512-vItx1xSt4aPDjt/9zH8Kfc8iCllnN0FMSIUNI+PV/6g+2jsvJrB6r0zOhk6EOh6EqJTTdcLf/hd4o5pSTfAiYQ==}
+
+  '@workspec/decision-schema@0.1.0-alpha.0':
+    resolution: {integrity: sha512-flrdGR+9zjYxXlN+g9fXVIdVAO7C3ezIMUTBXJBvOl8HlkQIhfhAHgpENT8DaOMZVJs/Hr8DzvXEFFc97MWUIg==}
+
+  '@workspec/decision-ui@0.1.0-alpha.0':
+    resolution: {integrity: sha512-PIzQKNO04LDALQcIBht9T4JoanNZNI5DjiPHEddVV1NrdXXtTyV5AunSB0gHrCBE4gwXsoLEPENt3Tkq0r7yQg==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.0.0
+      react: ^18.3.0
+      react-dom: ^18.3.0
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -3403,6 +3471,24 @@ snapshots:
       '@vitest/pretty-format': 3.2.6
       loupe: 3.2.1
       tinyrainbow: 2.0.0
+
+  '@workspec/decision-engine@0.1.0-alpha.0':
+    dependencies:
+      '@workspec/decision-schema': 0.1.0-alpha.0
+
+  '@workspec/decision-schema@0.1.0-alpha.0':
+    dependencies:
+      yaml: 2.9.0
+      zod: 3.25.76
+      zod-to-json-schema: 3.25.2(zod@3.25.76)
+
+  '@workspec/decision-ui@0.1.0-alpha.0(@tanstack/react-query@5.101.2(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/react-query': 5.101.2(react@18.3.1)
+      '@workspec/decision-engine': 0.1.0-alpha.0
+      '@workspec/decision-schema': 0.1.0-alpha.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   accepts@1.3.8:
     dependencies:
