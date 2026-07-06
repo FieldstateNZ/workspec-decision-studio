@@ -13,6 +13,12 @@ on:
     branches: [main]
     paths:
       - 'apps/site/**'
+      # Repo-level build inputs: with `--frozen-lockfile` the deployed site is
+      # pinned by the lockfile, so a dependency bump here must redeploy too.
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - '.npmrc'
+      - 'package.json'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
