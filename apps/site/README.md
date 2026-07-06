@@ -30,10 +30,13 @@ pnpm --filter @workspec/site build     # static build → apps/site/dist (+ 404.
 pnpm --filter @workspec/site preview    # preview the production build
 ```
 
-## Deployment (pending)
+## Deployment
 
-Publishing to `decision-studio.workspec.io` via `pages.yml` is **not wired up
-yet**: this repo's Pages slot currently serves the JSON Schemas at
-`schema.workspec.io`. Per issue #5, the site only claims the Pages slot once
-schema hosting has moved to its own repo (`FieldstateNZ/workspec-schemas#1`), so
-the CNAME cutover and the `pages.yml` switch land in a follow-up.
+[`pages.yml`](../../.github/workflows/pages.yml) builds this app and deploys it to
+GitHub Pages at **`https://decision-studio.workspec.io`** on every push to `main`
+that touches `apps/site/**` (and on manual `workflow_dispatch`). The custom domain
+is claimed by [`public/CNAME`](./public/CNAME) (Vite copies it to `dist/CNAME`), and
+`dist/404.html` is the SPA fallback so client-routed deep links like `/demo` resolve.
+
+Schema hosting has moved to `FieldstateNZ/workspec-schemas`, so this repo's single
+Pages slot now serves the site only.
