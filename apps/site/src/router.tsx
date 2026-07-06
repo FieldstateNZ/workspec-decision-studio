@@ -34,15 +34,18 @@ export function Link(props: AnchorHTMLAttributes<HTMLAnchorElement>): ReactEleme
   const handle = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement>): void => {
       onClick?.(event);
+      // Only intercept in-app absolute paths (e.g. "/", "/demo"). Everything
+      // else — external URLs, protocol-relative "//host", mailto:/tel:, "#hash"
+      // — falls through to the browser's default navigation.
+      const isInternal = href !== undefined && href.startsWith('/') && !href.startsWith('//');
       if (
-        href === undefined ||
+        !isInternal ||
         event.defaultPrevented ||
         event.button !== 0 ||
         event.metaKey ||
         event.ctrlKey ||
         event.shiftKey ||
-        event.altKey ||
-        href.startsWith('http')
+        event.altKey
       ) {
         return;
       }

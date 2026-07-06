@@ -28,5 +28,7 @@ export function downloadText(filename: string, text: string): void {
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
-  URL.revokeObjectURL(url);
+  // Revoke on a later tick: some browsers cancel an in-flight download if the
+  // blob URL is revoked synchronously right after click().
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
