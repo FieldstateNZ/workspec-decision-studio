@@ -44,8 +44,8 @@ Every artifact starts with a `yaml-language-server` directive that binds it to a
 a good editor gives you completion, hover docs, and inline validation as you type:
 
 ```yaml
-# yaml-language-server: $schema=https://schemas.fieldstate.io/workspec/v1alpha1/decision.schema.json
-apiVersion: workspec.fieldstate.io/v1alpha1
+# yaml-language-server: $schema=https://schema.workspec.io/v1alpha1/decision.schema.json
+apiVersion: workspec.io/v1alpha1
 kind: Decision
 # …
 ```
@@ -54,11 +54,11 @@ In **VS Code**, install the [YAML extension](https://marketplace.visualstudio.co
 (`redhat.vscode-yaml`) — it reads the directive and lights up. The tooling writes the header for
 you on every save.
 
-> **Schema URL status.** `https://schemas.fieldstate.io/…` is the **canonical** URL and is
-> DNS-gated: it resolves once the Fieldstate org points a CNAME for `schemas.fieldstate.io` at
+> **Schema URL status.** `https://schema.workspec.io/…` is the **canonical** URL and is
+> DNS-gated: it resolves once the Fieldstate org points a CNAME for `schema.workspec.io` at
 > GitHub Pages. Until then, use the **interim** Pages URL (published by
 > [`pages.yml`](./.github/workflows/pages.yml)):
-> `https://fieldstatenz.github.io/workspec-decision-studio/workspec/v1alpha1/decision.schema.json`,
+> `https://fieldstatenz.github.io/workspec-decision-studio/v1alpha1/decision.schema.json`,
 > or point `$schema` at the committed files under [`json-schema/`](./json-schema) directly.
 
 ## Use it in CI

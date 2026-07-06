@@ -6,7 +6,7 @@ import { CatalogArtifact, DecisionArtifact, Line, Lever, identifier } from './in
 
 function makeCatalog(): unknown {
   return {
-    apiVersion: 'workspec.fieldstate.io/v1alpha1',
+    apiVersion: 'workspec.io/v1alpha1',
     kind: 'Catalog',
     metadata: { id: 'cat', currency: 'NZD', asOf: '2026-07-01' },
     spec: {
@@ -19,7 +19,7 @@ function makeCatalog(): unknown {
 
 function makeDecision(): Record<string, unknown> {
   return {
-    apiVersion: 'workspec.fieldstate.io/v1alpha1',
+    apiVersion: 'workspec.io/v1alpha1',
     kind: 'Decision',
     metadata: { id: 'dec', title: 'T', status: 'exploring' },
     spec: {

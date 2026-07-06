@@ -75,7 +75,7 @@ describe('validate', () => {
       join(dir, 'x.decision.yaml'),
       [
         '# yaml-language-server: $schema=x',
-        'apiVersion: workspec.fieldstate.io/v1alpha1',
+        'apiVersion: workspec.io/v1alpha1',
         'kind: Decision',
         'metadata: { id: d, title: "D", status: exploring }',
         'spec:',
@@ -115,7 +115,7 @@ describe('validate', () => {
       join(dir, 'x.decision.yaml'),
       [
         '# yaml-language-server: $schema=x',
-        'apiVersion: workspec.fieldstate.io/v1alpha1',
+        'apiVersion: workspec.io/v1alpha1',
         'kind: Decision',
         'metadata: { id: d, title: "D", status: exploring }',
         'spec:',

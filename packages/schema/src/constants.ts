@@ -11,10 +11,10 @@ export const SCHEMA_VERSION = 'v1alpha1' as const;
  * Kubernetes-style `apiVersion` discriminant carried by every artifact.
  * `group/version`, where the group is the schema's DNS namespace.
  */
-export const API_VERSION = 'workspec.fieldstate.io/v1alpha1' as const;
+export const API_VERSION = 'workspec.io/v1alpha1' as const;
 
 /** Base URL under which the published JSON Schemas live. Trailing slash included. */
-export const SCHEMA_BASE_URL = 'https://schemas.fieldstate.io/workspec/v1alpha1/' as const;
+export const SCHEMA_BASE_URL = 'https://schema.workspec.io/v1alpha1/' as const;
 
 /** Canonical `$schema` URL for `*.decision.yaml` files. */
 export const DECISION_SCHEMA_URL = `${SCHEMA_BASE_URL}decision.schema.json` as const;

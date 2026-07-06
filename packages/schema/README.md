@@ -51,7 +51,7 @@ Every artifact should start with a `yaml-language-server` directive binding it t
 JSON Schema:
 
 ```yaml
-# yaml-language-server: $schema=https://schemas.fieldstate.io/workspec/v1alpha1/decision.schema.json
+# yaml-language-server: $schema=https://schema.workspec.io/v1alpha1/decision.schema.json
 ```
 
 ### Verifying completion + hover docs in VS Code (manual)

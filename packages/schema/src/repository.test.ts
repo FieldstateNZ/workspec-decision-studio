@@ -8,7 +8,7 @@ import type { Decision } from './decision.js';
 
 function makeDecision(overrides: Partial<Decision['metadata']> = {}): Decision {
   return {
-    apiVersion: 'workspec.fieldstate.io/v1alpha1',
+    apiVersion: 'workspec.io/v1alpha1',
     kind: 'Decision',
     metadata: {
       id: 'dec-min',
@@ -37,7 +37,7 @@ function makeDecision(overrides: Partial<Decision['metadata']> = {}): Decision {
 
 function makeCatalog(): Catalog {
   return {
-    apiVersion: 'workspec.fieldstate.io/v1alpha1',
+    apiVersion: 'workspec.io/v1alpha1',
     kind: 'Catalog',
     metadata: { id: 'cat-min', name: 'Minimal catalog', currency: 'NZD', asOf: '2026-07-01' },
     spec: {

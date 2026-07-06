@@ -45,7 +45,7 @@ describe('host server — read API over the hosting-platform example', () => {
   it('rejects an invalid decision write with 400 (Zod-validated)', async () => {
     const res = await request(app)
       .put(`/api/decision?ref=${encodeURIComponent(DECISION_REF)}`)
-      .send({ apiVersion: 'workspec.fieldstate.io/v1alpha1', kind: 'Decision', metadata: {} });
+      .send({ apiVersion: 'workspec.io/v1alpha1', kind: 'Decision', metadata: {} });
     expect(res.status).toBe(400);
     expect(res.body.error).toBe('invalid decision');
   });

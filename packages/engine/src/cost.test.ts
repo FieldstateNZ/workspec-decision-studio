@@ -8,7 +8,7 @@ import { validateRefs } from './validate.js';
 
 function makeCatalog(): Catalog {
   return {
-    apiVersion: 'workspec.fieldstate.io/v1alpha1',
+    apiVersion: 'workspec.io/v1alpha1',
     kind: 'Catalog',
     metadata: { id: 'cat', currency: 'NZD', asOf: '2026-07-01' },
     spec: {
@@ -239,7 +239,7 @@ describe('computeOption', () => {
 
   function decisionWith(option: OptionType): Decision {
     return {
-      apiVersion: 'workspec.fieldstate.io/v1alpha1',
+      apiVersion: 'workspec.io/v1alpha1',
       kind: 'Decision',
       metadata: { id: 'd', title: 'T', status: 'exploring' },
       spec: {
@@ -297,7 +297,7 @@ describe('validateRefs', () => {
 
   function decisionWithLine(line: LineType): Decision {
     return {
-      apiVersion: 'workspec.fieldstate.io/v1alpha1',
+      apiVersion: 'workspec.io/v1alpha1',
       kind: 'Decision',
       metadata: { id: 'd', title: 'T', status: 'exploring' },
       spec: {

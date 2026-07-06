@@ -5,7 +5,7 @@ import { createMemoryRepository } from '@workspec/decision-schema';
 
 function decisionWithCatalog(catalog: string): Decision {
   return {
-    apiVersion: 'workspec.fieldstate.io/v1alpha1',
+    apiVersion: 'workspec.io/v1alpha1',
     kind: 'Decision',
     metadata: { id: 'd', title: 'd', status: 'exploring' },
     spec: {

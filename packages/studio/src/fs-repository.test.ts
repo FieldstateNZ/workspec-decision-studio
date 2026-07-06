@@ -69,7 +69,7 @@ describe('FsRepository read', () => {
       join(dir, 'bad.catalog.yaml'),
       [
         '# yaml-language-server: $schema=x',
-        'apiVersion: workspec.fieldstate.io/v1alpha1',
+        'apiVersion: workspec.io/v1alpha1',
         'kind: Catalog',
         'metadata:',
         '  id: c',

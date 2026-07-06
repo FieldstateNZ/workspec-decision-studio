@@ -11,14 +11,14 @@ describe('generated JSON Schema', () => {
   it('decision schema is self-describing (dialect, $id, title)', () => {
     const s = buildDecisionJsonSchema();
     expect(s.$schema).toBe('https://json-schema.org/draft/2020-12/schema');
-    expect(s.$id).toBe('https://schemas.fieldstate.io/workspec/v1alpha1/decision.schema.json');
+    expect(s.$id).toBe('https://schema.workspec.io/v1alpha1/decision.schema.json');
     expect(s.title).toContain('Decision');
     expect(s.type).toBe('object');
   });
 
   it('catalog schema is self-describing (dialect, $id, title)', () => {
     const s = buildCatalogJsonSchema();
-    expect(s.$id).toBe('https://schemas.fieldstate.io/workspec/v1alpha1/catalog.schema.json');
+    expect(s.$id).toBe('https://schema.workspec.io/v1alpha1/catalog.schema.json');
     expect(s.title).toContain('Catalog');
   });
 
