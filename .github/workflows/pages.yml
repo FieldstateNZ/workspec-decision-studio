@@ -51,8 +51,8 @@ jobs:
           <title>WorkSpec schemas</title>
           <h1>WorkSpec Decision Studio — JSON Schemas</h1>
           <ul>
-            <li><a href="/v1alpha1/decision.schema.json">v1alpha1/decision.schema.json</a></li>
-            <li><a href="/v1alpha1/catalog.schema.json">v1alpha1/catalog.schema.json</a></li>
+            <li><a href="v1alpha1/decision.schema.json">v1alpha1/decision.schema.json</a></li>
+            <li><a href="v1alpha1/catalog.schema.json">v1alpha1/catalog.schema.json</a></li>
           </ul>
           HTML
 
