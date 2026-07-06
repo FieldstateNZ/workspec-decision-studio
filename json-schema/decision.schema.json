@@ -6,7 +6,7 @@
   "properties": {
     "apiVersion": {
       "type": "string",
-      "const": "workspec.fieldstate.io/v1alpha1",
+      "const": "workspec.io/v1alpha1",
       "description": "Artifact API version discriminant."
     },
     "kind": {

@@ -57,7 +57,7 @@ stays the value written into fixtures so it becomes correct the moment DNS lands
 
 ## 3. Common conventions
 
-- Every artifact carries a Kubernetes-style discriminant: `apiVersion: workspec.fieldstate.io/v1alpha1`
+- Every artifact carries a Kubernetes-style discriminant: `apiVersion: workspec.io/v1alpha1`
   and `kind: Decision | Catalog`.
 - **Identifiers** (`id` fields and the ref keys `sku`/`mode`/`schedule`, env keys, criterion
   keys) are slugs matching `^[A-Za-z0-9][A-Za-z0-9_-]*$`.

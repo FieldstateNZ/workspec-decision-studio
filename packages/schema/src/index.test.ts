@@ -22,7 +22,7 @@ describe('@workspec/decision-schema constants', () => {
   });
 
   it('carries a k8s-style apiVersion for the v1alpha1 group', () => {
-    expect(API_VERSION).toBe('workspec.fieldstate.io/v1alpha1');
+    expect(API_VERSION).toBe('workspec.io/v1alpha1');
   });
 
   it('derives the published $schema URLs from the base URL', () => {

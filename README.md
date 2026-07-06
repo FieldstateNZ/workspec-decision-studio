@@ -45,7 +45,7 @@ a good editor gives you completion, hover docs, and inline validation as you typ
 
 ```yaml
 # yaml-language-server: $schema=https://schema.workspec.io/v1alpha1/decision.schema.json
-apiVersion: workspec.fieldstate.io/v1alpha1
+apiVersion: workspec.io/v1alpha1
 kind: Decision
 # …
 ```
