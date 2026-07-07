@@ -39,7 +39,7 @@ by package boundaries:
 | ----------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | `decision-schema` | types, `safeParse`, YAML load w/ line/col, `zod-to-json-schema`, the repository **port** + `MemoryRepository` | `zod`, `zod-to-json-schema`, `yaml`                  |
 | `decision-engine` | `compute`, `applyLevers`, `validateRefs`, `recommend`, `buildAdrModel` + `renderAdrMarkdown`                  | `@workspec/decision-schema` only                     |
-| `decision-ui`     | `DecisionStudioProvider`, four views, `DecisionCard`, `DecisionApp`; `--ds-*` themes; `styles.css`            | peers: `react`, `react-dom`, `@tanstack/react-query` |
+| `decision-ui`     | `DecisionStudioProvider`, four views, `DecisionCard`, `DecisionApp`; WorkSpec design tokens via `@workspec/design`; `styles.css`            | peers: `react`, `react-dom`, `@tanstack/react-query` |
 | `decision-studio` | `workspec-decisions` bin, Express host, `FsRepository`, browser `HttpRepository`, bundled client              | `express`, `yaml`, the three `@workspec` libs        |
 
 ---
@@ -129,7 +129,7 @@ The contract that makes this work is `DecisionStudioHost`, the single object the
 - `capabilities` — `{ editCatalog, decide }` feature gates.
 
 `react` / `react-dom` / `@tanstack/react-query` are shared singletons across the federation
-boundary (a documented version-range policy); styles are self-contained via `--ds-*` CSS
+boundary (a documented version-range policy); styles are self-contained via WorkSpec design-token CSS
 variables with fallbacks — **no Tailwind or global CSS crosses the package boundary**. The
 `examples/mf-host` smoke host is the CI integration proof: it mounts the remote over a
 `MemoryRepository` and Playwright asserts `DecisionCard` renders the golden cost **and** that
