@@ -2,6 +2,7 @@
 // door to a developer tool, not a SaaS splash. Positioning and copy track the
 // repository README so the two never drift.
 import type { ReactElement } from 'react';
+import { Button, Lbl } from '@workspec/design/components';
 
 import { Link } from './router.js';
 
@@ -24,7 +25,7 @@ export function Marketing(): ReactElement {
 
       <main>
         <section className="hero">
-          <p className="eyebrow">Free · standalone · git-native</p>
+          <Lbl>Free · standalone · git-native</Lbl>
           <h1>Costed architecture decisions as reviewable YAML artifacts.</h1>
           <p className="lede">
             “Which platform should we run on?” usually ends up as a slide deck and a lost Slack
@@ -34,12 +35,12 @@ export function Marketing(): ReactElement {
             version with git.
           </p>
           <div className="cta-row">
-            <Link href="/demo" className="btn btn-primary">
-              Try the live demo
-            </Link>
-            <a href={REPO_URL} className="btn btn-secondary">
-              View on GitHub
-            </a>
+            <Button asChild>
+              <Link href="/demo">Try the live demo</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <a href={REPO_URL}>View on GitHub</a>
+            </Button>
           </div>
           <p className="hero-sub">
             <strong>No database.</strong> The files in your working tree are the single source of
@@ -121,9 +122,9 @@ export function Marketing(): ReactElement {
             The demo runs entirely in your browser against both worked examples — no install, no
             signup.
           </p>
-          <Link href="/demo" className="btn btn-primary">
-            Open the live demo
-          </Link>
+          <Button asChild>
+            <Link href="/demo">Open the live demo</Link>
+          </Button>
         </section>
       </main>
 
