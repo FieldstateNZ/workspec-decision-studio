@@ -1,3 +1,9 @@
+> [!IMPORTANT]
+> **Superseded by [workspec-studio](https://github.com/FieldstateNZ/workspec-studio).**
+> The Decisions packages in this monorepo were imported into `workspec-studio` with
+> full git history and are actively developed there. This repository is kept for
+> reference and is no longer maintained.
+
 # WorkSpec Decision Studio
 
 > **Costed architecture decisions as reviewable YAML artifacts. Free, standalone, git-native.**
